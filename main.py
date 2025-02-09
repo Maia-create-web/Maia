@@ -3,7 +3,8 @@ class EnglishGermanDictionary:
         self.dictionary = {}
         for item in word_list:
             english, german = item.split('-')
-            self.dictionary[english.strip().lower()] = german.strip()
+            self.dictionary[english.strip().lower()] = german.strip().lower()
+            self.dictionary[german.strip().lower()] = english.strip().lower()
 
     def translate(self, word):
         return self.dictionary.get(word.lower(), "Not Found")
@@ -26,7 +27,7 @@ word_list = [
 eng_ger_dict = EnglishGermanDictionary(word_list)
 
 while True:
-    user_word = input("Enter an English word (or type 'exit' to quit): ").strip().lower()
+    user_word = input("Enter a word in English or German (or type 'exit' to quit): ").strip().lower()
 
     if user_word == "exit":
         print("Exiting the program.")
