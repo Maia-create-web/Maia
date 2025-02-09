@@ -1,0 +1,7 @@
+tree
+country
+land
+tree
+country
+country
+fall
